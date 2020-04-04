@@ -1,3 +1,12 @@
+/**
+ * app.js
+ * The logic for the website resides here
+ * @author Spence McComb - 100426427
+ * @version 1.0
+ * @since 2020/04/04
+ */
+
+ // Constructor for a Contact object (via Contact Me page)
 class Contact
 {
     constructor(contactName = "", emailAddress = "", contactNumber = "", contactMessage = "")
@@ -12,6 +21,7 @@ class Contact
 //IIFE
 (function(){
 
+    // Loads the functionality on the homepage
     function HomepageFunctionality()
     {
         $("#projectsButton").click(function()
@@ -21,8 +31,11 @@ class Contact
         
     }
 
+
+    // Loads the functionality on the contact me page
     function ContactFunctionality()
     {
+        // Clears and resets the form
         function clearForm()
         {
             //document.getElementById("contactForm").reset();
@@ -30,6 +43,7 @@ class Contact
             $("#errorMessage").hide();
         }
 
+        // Ensures the entered data matches what we require
         function validateInput(selector, condition, errorMessage)
         {
             if(condition)
@@ -46,13 +60,14 @@ class Contact
             }
         }
 
+        // Hides initial error messages and selects the first input field
         $("#errorMessage").hide();
         $("#contactName").select();
 
         // Contact Name Events
         $("#contactName").blur((e)=>
         {
-            validateInput("#contactName",( $("#contactName").val().length < 2),"Contact Name is Too Short");
+            validateInput("#contactName",( $("#contactName").val().trim().length < 2),"Your name must be at least 2 characters long.");
         });
 
         $("#contactName").focus((e)=>
@@ -96,9 +111,10 @@ class Contact
             $("#contactMessage").select();
         });
 
-
+        // Replaces the default submit action
         $("#contactForm").submit  ((e)=>
         {
+            // Some of the data is invalid
             if(document.getElementById("contactForm").checkValidity() == false)
             {
                 e.preventDefault();
@@ -106,7 +122,7 @@ class Contact
                 console.log("form not valid");
             }
 
-            
+            // Supply the Contact object with the gathered information pertaining to it
             let contactName = $("#contactName").val();
             let emailAddress = $("#emailAddress").val();
             let contactNumber = $("#contactNumber").val();
@@ -127,18 +143,19 @@ class Contact
             clearForm();
         });
 
+        // Event handler for the reset button
         $("#resetButton").click((e)=>
         {
             e.preventDefault();
-            if(confirm("Are You Sure?"))
+            if(confirm("Are you sure you want to reset the form?"))
             {
                 clearForm();
             }
         });
     }
 
-    
 
+    // The initial load of the page
     function Start()
     {
         console.log("App Started...");
@@ -154,6 +171,7 @@ class Contact
         }
     }
 
+    // Call the start method when the page loads
     window.addEventListener("load", Start);
 
 })();

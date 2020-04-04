@@ -1,3 +1,11 @@
+/**
+ * index.js
+ * Contains the controllers for each view
+ * @author Spence McComb - 100426427
+ * @version 1.0
+ * @since 2020/04/04 
+ */
+
 /* CONTROLLERS SECTION */
 module.exports.displayHome = (res) =>
 {

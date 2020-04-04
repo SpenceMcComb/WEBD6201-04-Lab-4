@@ -1,3 +1,11 @@
+/**
+ * app.js
+ * Backend routing and setup
+ * @author Spence McComb - 100426427
+ * @version 1.0
+ * @since 2020/04/04
+ */
+
 let createError = require('http-errors');
 let express = require('express');
 let path = require('path');

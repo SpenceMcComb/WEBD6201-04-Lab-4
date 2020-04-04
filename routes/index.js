@@ -1,3 +1,11 @@
+/**
+ * index.js
+ * Contains the routing for each of the views
+ * @author Spence McComb - 100426427
+ * @version 1.0
+ * @since 2020/04/04
+ */
+
 let express = require('express');
 let router = express.Router();
 

@@ -1,14 +1,27 @@
+/**
+ * app.css
+ * This is where the website's stylings reside
+ * @author Spence McComb - 100426427
+ * @version 1.0
+ * @since 2020/04/04
+ */
+
+
+ /* Alignment */
 .center-align
 {
     text-align: center;
 }
 
-.center {
+.center 
+{
     display: block;
     margin-left: auto;
     margin-right: auto;
-  }
+}
 
+
+/* Input groups */
 .input-group-addon:first-child
 {
     border-right: 0;
@@ -46,7 +59,7 @@
 }
 
 
-
+/* Login and logout */
 .login
 {
     padding: 2rem 1rem;
