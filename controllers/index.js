@@ -23,11 +23,11 @@ module.exports.displayContact = (res) =>
   });
 }
 
-module.exports.displayProducts = (res) =>
+module.exports.displayProjects = (res) =>
 {
   res.render('index',
   {
-    title: 'Products'
+    title: 'Projects'
   });
 }
 
@@ -46,3 +46,4 @@ module.exports.displayLogin = (res) =>
     title: 'Login'
   });
 }
+

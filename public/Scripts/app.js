@@ -12,10 +12,17 @@ class Contact
 //IIFE
 (function(){
 
-
-    function DisplayContactContent()
+    function HomepageFunctionality()
     {
-        document.title = "WEBD6201 - Contact Us";
+        $("#projectsButton").click(function()
+        {
+            window.location.replace("/projects");
+        });
+        
+    }
+
+    function ContactFunctionality()
+    {
         function clearForm()
         {
             //document.getElementById("contactForm").reset();
@@ -127,10 +134,10 @@ class Contact
             {
                 clearForm();
             }
-
-            
         });
     }
+
+    
 
     function Start()
     {
@@ -139,8 +146,10 @@ class Contact
         let pageName = name.substring(1);
         switch(pageName)
         {
+            case 'home':
+                HomepageFunctionality();
             case 'contact':
-                DisplayContactContent();
+                ContactFunctionality();
                 break;
         }
     }
