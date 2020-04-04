@@ -8,15 +8,27 @@
 
 <% if (title == 'Home') { %>
 
- <%- include ./content/home.ejs %>
+    <%- include ./content/home.ejs %>
+
+<% } else if(title == 'Products') { %>
+
+    <%- include ./content/products.ejs %>
+
+<% } else if(title == 'Services') { %>
+
+    <%- include ./content/services.ejs %>
 
 <% } else if(title == 'About') { %>
 
-<%- include ./content/about.ejs %>
+    <%- include ./content/about.ejs %>
 
 <% } else if(title == 'Contact') { %>
 
-<%- include ./content/contact.ejs %>
+    <%- include ./content/contact.ejs %>
+
+<% } else if(title == 'Login') { %>
+
+    <%- include ./content/login.ejs %>
 
 <% } %>
 
